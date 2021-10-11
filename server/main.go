@@ -11,7 +11,7 @@ import (
 // Following constants should be synced with cilium CI.
 
 const MSG_SIZE = 256
-const IO_TIME_OUT = 2 * time.Second
+const IO_TIME_OUT = 5 * time.Second
 
 func panicOnErr(ctx string, err error) {
 	if err != nil {
