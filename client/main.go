@@ -73,7 +73,9 @@ func main() {
 	remote := os.Args[1]
 
 	for i := 0; i < 10; i++ {
-		servAddr, err = net.ResolveUDPAddr("udp", remote)
+		if servAddr, err = net.ResolveUDPAddr("udp", remote); err != nil {
+			break
+		}
 		time.Sleep(1 * time.Second)
 	}
 	panicOnErr(fmt.Sprintf("Failed to resolve UDP address[%s]:", remote), err)
